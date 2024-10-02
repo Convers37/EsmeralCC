@@ -1,0 +1,374 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f8f8f8;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+main {
+    padding: 2rem;
+}
+
+#productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding-top: 2rem;
+}
+
+.producto {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.producto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.producto img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.producto h3 {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    margin-top: 0.5rem;
+}
+
+.producto p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.producto .precio {
+    font-weight: bold;
+    color: #006400;
+    margin-bottom: 1rem;
+}
+
+.galeria {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.slide {
+    flex: 0 0 100%;
+    transition: opacity 0.5s ease;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.flecha-izquierda, .flecha-derecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #006400;
+    z-index: 100;
+}
+
+.flecha-izquierda {
+    left: 0.5rem;
+}
+
+.flecha-derecha {
+    right: 0.5rem;
+}
+
+footer {
+    background-color: #006400;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .contacto {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-bottom: 1rem;
+}
+
+footer .columna {
+    flex: 1 1 30%;
+    min-width: 200px;
+}
+
+footer .columna h4 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 0.5rem;
+}
+
+footer .columna p, footer .columna a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* Agregar a tu styles.css */
+#detalle-producto {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem;
+}
+
+.galeria-producto {
+    flex: 1 1 60%;
+    position: relative;
+}
+
+.info-producto {
+    flex: 1 1 35%;
+    margin-left: 2rem;
+}
+
+.info-producto h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #006400;
+}
+
+.info-producto ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-producto ul li {
+    margin-bottom: 0.5rem;
+}
+
+.info-producto .precio {
+    font-size: 1.5rem;
+    color: #006400;
+    font-weight: bold;
+}
+
+.galeria-producto .slide img {
+    width: 100%;
+    height: auto;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* Estilo para quitar subrayado de los enlaces */
+a {
+    text-decoration: none;
+    color: inherit; /* Hereda el color del texto del padre */
+}
+
+/* Estilo específico para los enlaces dentro de los productos */
+.producto a {
+    display: block; /* Hace que todo el bloque del producto sea clickeable */
+    color: inherit; /* Hereda el color del texto del padre */
+}
+
+/* Estilo para los enlaces en el pie de página */
+.contacto a {
+    text-decoration: none;
+    color: #333; /* Color gris oscuro para los enlaces del pie de página */
+}
+
+/* Estilo para los enlaces en la galería de producto */
+.galeria a {
+    text-decoration: none;
+    color: inherit; /* Hereda el color del texto del padre */
+}
+
+
+/*Hasta aqui va todo perfectoooooo
+
+/* Agregar a tu styles.css */
+
+/* Estilos para la página de detalle del producto */
+#detalle-producto {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem;
+}
+
+.galeria-producto {
+    flex: 1 1 60%;
+    position: relative;
+    max-width: 400px; /* Ajusta el ancho máximo de la galería */
+}
+
+.info-producto {
+    flex: 1 1 35%;
+    margin-left: 2rem;
+}
+
+.info-producto h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #000000;
+}
+
+.info-producto ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-producto ul li {
+    margin-bottom: 0.5rem;
+}
+
+.info-producto .precio {
+    font-size: 1.5rem;
+    color: #006400;
+    font-weight: bold;
+}
+
+.galeria-producto .slide img {
+    max-width: 100%; /* Ajusta el ancho máximo de las imágenes */
+    height: auto;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/*Esto de pa bajo es de la portada
+
+/* Portada */
+.portada {
+    position: relative;
+    height: 100vh;
+    background: url('img/j1.1.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    border-radius: 20px; /* Ajusta este valor para el chaflán */
+    overflow: hidden;
+}
+
+.portada .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.portada .contenido {
+    position: relative;
+    z-index: 1;
+}
+
+.portada h1 {
+    font-size: 3rem;
+    margin: 0 0 1rem;
+}
+
+.portada p {
+    font-size: 1.25rem;
+    margin: 0 0 2rem;
+}
+
+.portada .boton {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: #006400;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.portada .boton:hover {
+    background: #004b23;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/*Hasta aqui super bien la portada
+
+/* Añadir estos estilos a tu archivo styles.css */
+
+/* Agregar animación a la imagen de fondo */
+.portada::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    z-index: -1;
+    clip-path: inherit;
+    border-radius: inherit;
+    animation: imageFadeIn 1.5s forwards;
+    opacity: 0;  /* Comienza invisible */
+}
+
+

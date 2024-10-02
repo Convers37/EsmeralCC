@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esmerald C&C - Detalles del Producto</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="img/logopp.png" alt="Esmerald C&C Logo"></a>
+        </div>
+    </header>
+    <main>
+        <section id="detalle-producto">
+            <div class="galeria-producto" data-aos="fade-up">
+                <div class="slide"><img src="img/t7.1.jpg" alt="Producto Imagen 1"></div>
+                <div class="slide"><img src="img/t7.2.jpg" alt="Producto Imagen 2"></div>
+                <div class="flecha-izquierda">&#10094;</div>
+                <div class="flecha-derecha">&#10095;</div>
+            </div>
+            <div class="info-producto">
+                <h3>Producto 1</h3>
+                <p>Descripción detallada del producto 1.</p>
+                <ul>
+                    <li>Especificación 1</li>
+                    <li>Especificación 2</li>
+                    <li>Especificación 3</li>
+                </ul>
+                <p class="precio">$500</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="contacto">
+            <div class="columna">
+                <h4>Número de Contacto</h4>
+                <p><a href="tel:+573172384789">317 238 4789</a></p>
+                <p><a href="tel:+573003285800">300 328 5800</a></p>
+            </div>
+            <div class="columna">
+                <h4>Correo Electrónico</h4>
+                <p><a href="mailto:esmeralCandC@gmail.com">esmeralCandC@gmail.com</a></p>
+            </div>
+            <div class="columna">
+                <h4>Instagram</h4>
+                <p><a href="https://www.instagram.com/esmeraldC&C" target="_blank">@esmeraldC&C</a></p>
+            </div>
+        </div>
+        <p>&copy; 2024 Esmeral C&C - Todos los derechos reservados.</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // Funcionalidad del carrusel
+        const galeria = document.querySelector('.galeria-producto');
+        const slides = galeria.querySelectorAll('.slide');
+        const flechaIzquierda = galeria.querySelector('.flecha-izquierda');
+        const flechaDerecha = galeria.querySelector('.flecha-derecha');
+        let index = 0;
+
+        const mostrarSlide = (i) => {
+            slides.forEach((slide, j) => {
+                slide.style.display = (i === j) ? 'block' : 'none';
+            });
+        };
+
+        mostrarSlide(index);
+
+        flechaIzquierda.addEventListener('click', () => {
+            index = (index > 0) ? index - 1 : slides.length - 1;
+            mostrarSlide(index);
+        });
+
+        flechaDerecha.addEventListener('click', () => {
+            index = (index < slides.length - 1) ? index + 1 : 0;
+            mostrarSlide(index);
+        });
+
+        slides.forEach(slide => {
+            slide.addEventListener('click', () => {
+                const modal = document.createElement('div');
+                modal.classList.add('modal');
+                const img = document.createElement('img');
+                img.src = slide.querySelector('img').src;
+                modal.appendChild(img);
+                document.body.appendChild(modal);
+                modal.addEventListener('click', () => {
+                    document.body.removeChild(modal);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
